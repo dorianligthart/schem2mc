@@ -1,90 +1,21 @@
 <!DOCTYPE html>
 <style>
-	a:visited, a:link {
-		font-size: 40px;
-		color: rgb(225, 83, 214);
-		background-color: transparent;
-		text-decoration: none;
-	}
-	head {
-		align-items: center;
-	}
-	body {
-		align-items: center;
+	body, a:visited, a:link {
 		font-family: Verdana, Tahoma, monospace, Helvetica, sans-serif;
-		background-color: transparent;
-		padding: 10px;
-		font-size: 13px;
-		color: rgb(0, 200, 255);
+		color: rgb(166, 227, 255);
 		background-image: url('background.png');
 	}
-	input {
-		color: rgb(0, 200, 255);
-		font-size: 25px;
-	}
-	.drag-area{
-		border: 2px dashed #fff;
-		height: 500px;
-		width: 700px;
-		border-radius: 5px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-	}
-	.drag-area.active{
-		border: 2px solid #fff;
-	}
-	.drag-area .icon{
-		font-size: 100px;
-		color: #fff;
-	}
-	.drag-area header{
-		font-size: 30px;
-		font-weight: 500;
-		color: #fff;
-	}
-	.drag-area span{
-		font-size: 25px;
-		font-weight: 500;
-		color: #fff;
-		margin: 10px 0 15px 0;
-	}
-	.drag-area button{
-		padding: 10px 25px;
-		font-size: 20px;
-		font-weight: 500;
-		border: none;
-		outline: none;
-		background: #fff;
-		color: #5256ad;
-		border-radius: 5px;
-		cursor: pointer;
-	}
-	.drag-area img{
-		height: 100%;
-		width: 100%;
-		object-fit: cover;
-		border-radius: 5px;
-	}
 	</style>
-<head>
-	<h1>Upload local `.schem` and `.schematic` files from:</h1>
-	<a href="https://enginehub.org/worldedit" target="_blank" title="https://enginehub.org/worldedit">worldedit</a>
-	<h1>to convert to vanilla `.mcfunction` using setblock</h1>
-	<h3>tip for multiple file conversion:</h3>
-	<pre><code>mkdir ~/Documents/tmpDownload</code></pre>
-	<pre><code>mv ~/Download/* ~/Documents/tmpDownload/</code></pre>
-	<h6>or you could set a download location in browser settings.</h6>
-</head>
+<html>
+	<script src="script.js"></script>
+	<head>
+		<title>schem2mcfunction</title>
+		<link rel="icon" href="schem2mc.ico">
+	</head>
 <body>
-	<div class="drag-area">
-		<div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-		<header>Drag & Drop to Upload File</header>
-		<span>OR</span>
-		<button>Browse File</button>
-		<input type="file" accept=".schem, .schematic, .nbt, .txt" multiple hidden>
-	</div>
-	<script src="convert.js"></script>
-	<script src="filehandler.js"></script>
+	<a href="https://enginehub.org/worldedit" target="_blank">WorldEdit reference</a>
+	<h1>Upload Files:</h1>
+	<input type="file" multiple>
+	<button onclick="parsefiles()">Convert to mcfunction</button>
 </body>
+</html>
